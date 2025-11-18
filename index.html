@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Slytherin Test Page</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #000;
+        font-family: "Cinzel", serif;
+    }
+
+    /* Particle background */
+    .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background: radial-gradient(circle, rgba(0,255,150,0.1) 0%, transparent 60%);
+        animation: pulse 6s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulse {
+        from { opacity: 0.4; }
+        to { opacity: 0.8; }
+    }
+
+    .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(0,255,150,0.9);
+        border-radius: 50%;
+        animation: float 8s infinite linear;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(100vh); opacity: 0; }
+        10% { opacity: 1; }
+        100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    /* Main content */
+    .container {
+        text-align: center;
+        padding-top: 40px;
+        color: white;
+        position: relative;
+        z-index: 10;
+    }
+
+    .logo {
+        width: 250px;
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .parchment {
+        display: inline-block;
+        padding: 40px 80px;
+        background-image: url('https://i.imgur.com/0L0HqzY.png'); /* parchment placeholder */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: black;
+        font-size: 32px;
+        font-weight: bold;
+        font-family: "Cinzel", serif;
+        text-shadow: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<div class="container">
+    <img class="logo" src="https://i.imgur.com/Mne7nCn.png" alt="Slytherin Logo" />
+    <div class="parchment">Test Site</div>
+</div>
+
+<script>
+    // Generate floating particles
+    const particleContainer = document.getElementById("particles");
+    const particleCount = 80;
+
+    for (let i = 0; i < particleCount; i++) {
+        const p = document.createElement("div");
+        p.classList.add("particle");
+        p.style.left = Math.random() * 100 + "vw";
+        p.style.animationDuration = 6 + Math.random() * 6 + "s";
+        p.style.animationDelay = Math.random() * -10 + "s";
+        particleContainer.appendChild(p);
+    }
+</script>
+
+</body>
+</html>
+
