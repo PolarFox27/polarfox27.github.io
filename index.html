@@ -74,7 +74,23 @@
 	    color: black;
 	    font-size: 32px;
 	    font-weight: bold;
-}
+    }
+    .image-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+        margin-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    .image-column img {
+        width: 50%;
+        max-width: 400px;
+        border-radius: 10px;
+        border: 2px solid rgba(0,255,150,0.4);
+    }
 </style>
 </head>
 <body>
@@ -83,7 +99,20 @@
 
 <div class="container">
     <img class="logo" src="./images/slytherin.png" alt="Slytherin Logo" />
-    <div class="parchment">Un objet de grande valeur t'a été volé, à toi maintenant de le retrouver. Magnanime, je t'ai laissé quelques traces de son enlèvement.</div>
+    <div class="parchment">
+        Un objet de grande valeur t'a été volé, à toi maintenant de le retrouver. 
+        Magnanime, je t'ai laissé quelques traces de son enlèvement.
+    </div>
+    <div class="image-column">
+        <img src="./images/image-1.jpeg" alt="">
+        <img src="./images/image-2.jpeg" alt="">
+        <img src="./images/image-3.jpeg" alt="">
+        <img src="./images/image-4.jpeg" alt="">
+        <img src="./images/image-5.jpeg" alt="">
+        <img src="./images/image-6.jpeg" alt="">
+        <img src="./images/image-7.jpeg" alt="">
+        <img src="./images/image-8.jpeg" alt="">
+</div>
 </div>
 
 <script>
